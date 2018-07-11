@@ -15,34 +15,34 @@
 
 # # ######################################################
 
-#  -  request:
-#       method: GET
-#       url: /products/1234
-#       headers:
-#          content-type: application/json
-#       post: >
+-  request:
+      method: GET
+      url: /products/1234
+      headers:
+         content-type: application/json
+      post: >
 
-#    response:
-#       status: 200
-#       headers:
-#             content-type: application/json
-#       file: getproductdetail_response_success.json
+   response:
+      status: 200
+      headers:
+         content-type: application/json
+      file: getproductdetail_response_success.json
 
 # # ######################################################
 
-# -  request:
-#       method: POST
-#       url: /carts
-#       headers:
-#          content-type: application/json
-#       file: addtocart_request.json
-#       post: >
+-  request:
+      method: POST
+      url: /carts
+      headers:
+         content-type: application/json
+      file: addtocart_request.json
+      post: >
 
-#    response:
-#       status: 200
-#       headers:
-#          content-type: application/json
-#       file: addtocart_response_success.json
+   response:
+      status: 200
+      headers:
+         content-type: application/json
+      file: addtocart_response_success.json
 
 
 # ######################################################
@@ -62,34 +62,34 @@
 
 # ######################################################
 
-# -  request:
-#       method: POST
-#       url: /orders
-#       headers:
-#          content-type: application/json
-#       file: createorderid_request.json
-#       post: >
+-  request:
+      method: POST
+      url: /orders
+      headers:
+         content-type: application/json
+      file: createorderid_request.json
+      post: >
 
-#    response:
-#       status: 200
-#       headers:
-#          content-type: application/json
-#       file: createorderid_response_success.json
+   response:
+      status: 200
+      headers:
+         content-type: application/json
+      file: createorderid_response_success.json
 
 # # ######################################################
 
-# -  request:
-#       method: GET
-#       url: /orders/7890
-#       headers:
-#          content-type: application/json
-#       post: >
+-  request:
+      method: GET
+      url: /orders/7890
+      headers:
+         content-type: application/json
+      post: >
 
-#    response:
-#       status: 200
-#       headers:
-#          content-type: application/json
-#       file: getorderid_response_success.json
+   response:
+      status: 200
+      headers:
+         content-type: application/json
+      file: getorderid_response_success.json
 
 # # ######################################################
 
@@ -105,10 +105,6 @@
 #       status: 200
 #       headers:
 #          content-type: application/json
-#       file: addshippingdetail_response_success.json
-
-
-
 # ######################################################
 
 # -  request:

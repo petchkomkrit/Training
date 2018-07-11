@@ -13,164 +13,137 @@
       file: listall_response_success.json
 
 
-# ######################################################
+# # ######################################################
 
-#  request:
-#  method: GET
-#  url: /products
-#  query: 
-#  q: adidas
+#  -  request:
+#       method: GET
+#       url: /products/1234
+#       headers:
+#          content-type: application/json
+#       post: >
 
-#  response:
-#  status: 200
-#  headers:
-#  content-type: application/json
-#  file: listsearch_response_success.json
+#    response:
+#       status: 200
+#       headers:
+#             content-type: application/json
+#       file: getproductdetail_response_success.json
 
-# ######################################################
+# # ######################################################
 
-#  request:
-#  method: GET
-#  url: /products/1234
-#  query: 
-#  q: 
+# -  request:
+#       method: POST
+#       url: /carts
+#       headers:
+#          content-type: application/json
+#       file: addtocart_request.json
+#       post: >
 
-#  response:
-#  status: 200
-#  headers:
-#  content-type: application/json
-#  file: getproductdetail_response_success.json
+#    response:
+#       status: 200
+#       headers:
+#          content-type: application/json
+#       file: addtocart_response_success.json
 
-# ######################################################
-
-
-#  request:
-#  method: POST
-#  url: /carts
-#  query: 
-#  q: 
-
-#  request:
-#  headers:
-#  content-type: application/json
-#  file: addtocart_request.json
-
-#  response:
-#  status: 200
-#  headers:
-#  content-type: application/json
-#  file: addtocart_response_success.json
-
-######################################################
-
-
-
-#  request:
-#  method: GET
-#  url: /carts/4567
-#  query: 
-#  q: 
-
-#  response:
-#  status: 200
-#  headers:
-#  content-type: application/json
-#  file: getcartlist_response_success.json
-
-######################################################
-
-
-#  request:
-#  method: POST
-#  url: /orders
-#  query: 
-#  q: 
-
-#  request:
-#  headers:
-#  content-type: application/json
-#  file: createorderid_request.json
-
-#  response:
-#  status: 200
-#  headers:
-#  content-type: application/json
-#  file: createorderid_response_success.json
 
 # ######################################################
 
+# -  request:
+#       method: GET
+#       url: /carts/4567
+#       headers:
+#          content-type: application/json
+#       post: >
 
-
-#  request:
-#  method: GET
-#  url: /orders/7890
-#  query: 
-#  q: 
-
-
-#  response:
-#  status: 200
-#  headers:
-#  content-type: application/json
-#  file: getorderid_response_success.json
+#    response:
+#       status: 200
+#       headers:
+#          content-type: application/json
+#       file: getcartlist_response_success.json
 
 # ######################################################
 
+# -  request:
+#       method: POST
+#       url: /orders
+#       headers:
+#          content-type: application/json
+#       file: createorderid_request.json
+#       post: >
 
-#  request:
-#  method: PUT
-#  url: /orders/7890/shipping
-#  query: 
-#  q: 
+#    response:
+#       status: 200
+#       headers:
+#          content-type: application/json
+#       file: createorderid_response_success.json
 
-#  request:
-#  headers:
-#  content-type: application/json
-#  file: addshippingdetail_request.json
+# # ######################################################
 
-#  response:
-#  status: 200
-#  headers:
-#  content-type: application/json
-#  file: addshippingdetail_response_success.json
+# -  request:
+#       method: GET
+#       url: /orders/7890
+#       headers:
+#          content-type: application/json
+#       post: >
+
+#    response:
+#       status: 200
+#       headers:
+#          content-type: application/json
+#       file: getorderid_response_success.json
+
+# # ######################################################
+
+# -  request:
+#       method: PUT
+#       url: /orders/7890/shipping
+#       headers:
+#          content-type: application/json
+#       file: addshippingdetail_request.json
+#       post: >
+
+#    response:
+#       status: 200
+#       headers:
+#          content-type: application/json
+#       file: addshippingdetail_response_success.json
 
 
-######################################################
 
- request:
- method: GET
- url: /shipping
- query: 
- method: KERRY
- weight: 2
- zipcode: 10250
- country: TH
+# ######################################################
+
+# -  request:
+#       method: GET
+#       url: /shipping
+#       query:
+#              method: KERRY
+#              weight: 2
+#              zipcode: 10250
+#              country: TH
+#       headers:
+#          content-type: application/json
+#       post: >
+
+#    response:
+#       status: 200
+#       headers:
+#          content-type: application/json
+#       file: getshippingpricelist_response_success.json
 
 
+# # ######################################################
 
- response:
- status: 200
- headers:
- content-type: application/json
- file: getshippingpricelist_response_success.json
+# -  request:
+#       method: PUT
+#       url: /orders/7890/payment
+#       headers:
+#          content-type: application/json
+#       file: addpaymentdetail_request.json
+#       post: >
 
-######################################################
-request:
- method: PUT
- url: /orders/7890/payment
- query: 
- q: 
-
- request:
- headers:
- content-type: application/json
- file: addpaymentdetail_request.json
-
- response:
- status: 200
- headers:
- content-type: application/json
- file: addpaymentdetail_response_success.json
-
+#    response:
+#       status: 200
+#       headers:
+#          content-type: application/json
+#       file: addpaymentdetail_response_success.json
 
 ######################################################

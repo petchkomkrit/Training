@@ -1,5 +1,5 @@
 {
-    "product_id":1,
+    "product_id":1234,
     "product_name":"Adidas1",
     "product_price":"1000",
     "product_quantity":"2",
@@ -10,6 +10,6 @@
     "shipping_price":"200",
     "payment_method":"7-11",
     "payment_date":"11/07/2018",
-    "payment_status":"paid"
+    "payment_status":"pending"
 
 }

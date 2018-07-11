@@ -1,6 +1,10 @@
 {
-    "product_id":1234,
-    "product_name":"Adidas1",
-    "product_price":"1000",
-    "product_url":"http://Adidas1.jpg"
+    "productlist":[
+        {
+            "product_id":1234,
+            "product_name":"Adidas",
+            "product_price":"1000",
+            "product_url":"http://Adidas1.jpg"
+        }
+    ]
 }

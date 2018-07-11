@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180711 14:55:31.980" generator="Robot 3.0.4 (Python 2.7.10 on darwin)">
+<suite source="/Users/thor/Documents/workshop/Training/testcase/step.robot" id="s1" name="Step">
+<test id="s1-t1" name="Order Adidas">
+<kw name="Open app - get list of all products">
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>list</arg>
+<arg>http://localhost:8882</arg>
+</arguments>
+<msg timestamp="20180711 14:55:32.454" level="INFO">Creating Session using : alias=list, url=http://localhost:8882, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" endtime="20180711 14:55:32.455" starttime="20180711 14:55:32.454"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>Content-Type=application/json</arg>
+</arguments>
+<assign>
+<var>&amp;{headers}</var>
+</assign>
+<msg timestamp="20180711 14:55:32.456" level="INFO">&amp;{headers} = { Content-Type=application/json }</msg>
+<status status="PASS" endtime="20180711 14:55:32.456" starttime="20180711 14:55:32.455"></status>
+</kw>
+<kw name="Get Request" library="RequestsLibrary">
+<doc>Send a GET request on the session object found using the</doc>
+<arguments>
+<arg>list</arg>
+<arg>/products</arg>
+<arg>headers=${headers}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20180711 14:55:32.494" level="INFO">Get Request using : alias=list, uri=/products, headers={u'Content-Type': u'application/json'} json=None</msg>
+<msg timestamp="20180711 14:55:32.495" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" endtime="20180711 14:55:32.495" starttime="20180711 14:55:32.457"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${response.status_code}</arg>
+<arg>${200}</arg>
+</arguments>
+<status status="PASS" endtime="20180711 14:55:32.496" starttime="20180711 14:55:32.495"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${response.json()['productlist']}</arg>
+</arguments>
+<assign>
+<var>${size}</var>
+</assign>
+<msg timestamp="20180711 14:55:32.497" level="INFO">Length is 2</msg>
+<msg timestamp="20180711 14:55:32.497" level="INFO">${size} = 2</msg>
+<status status="PASS" endtime="20180711 14:55:32.497" starttime="20180711 14:55:32.496"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${size}</arg>
+<arg>${2}</arg>
+</arguments>
+<status status="PASS" endtime="20180711 14:55:32.498" starttime="20180711 14:55:32.497"></status>
+</kw>
+<status status="PASS" endtime="20180711 14:55:32.499" starttime="20180711 14:55:32.453"></status>
+</kw>
+<kw name="Search product by Name = Adidas">
+<assign>
+<var>${selected_product_id}</var>
+</assign>
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>search</arg>
+<arg>http://localhost:8882</arg>
+</arguments>
+<msg timestamp="20180711 14:55:32.500" level="INFO">Creating Session using : alias=search, url=http://localhost:8882, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" endtime="20180711 14:55:32.501" starttime="20180711 14:55:32.500"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>Content-Type=application/json</arg>
+</arguments>
+<assign>
+<var>&amp;{headers}</var>
+</assign>
+<msg timestamp="20180711 14:55:32.503" level="INFO">&amp;{headers} = { Content-Type=application/json }</msg>
+<status status="PASS" endtime="20180711 14:55:32.503" starttime="20180711 14:55:32.501"></status>
+</kw>
+<kw name="Get Request" library="RequestsLibrary">
+<doc>Send a GET request on the session object found using the</doc>
+<arguments>
+<arg>search</arg>
+<arg>/products?q=Adidas</arg>
+<arg>headers=${headers}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20180711 14:55:32.516" level="INFO">Get Request using : alias=search, uri=/products?q=Adidas, headers={u'Content-Type': u'application/json'} json=None</msg>
+<msg timestamp="20180711 14:55:32.516" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" endtime="20180711 14:55:32.516" starttime="20180711 14:55:32.503"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${response.status_code}</arg>
+<arg>${200}</arg>
+</arguments>
+<status status="PASS" endtime="20180711 14:55:32.518" starttime="20180711 14:55:32.517"></status>
+</kw>
+<msg timestamp="20180711 14:55:32.518" level="INFO">${selected_product_id} = 1234</msg>
+<status status="PASS" endtime="20180711 14:55:32.518" starttime="20180711 14:55:32.499"></status>
+</kw>
+<kw name="Show product detail of selected product">
+<arguments>
+<arg>${selected_product_id}</arg>
+</arguments>
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>search</arg>
+<arg>http://localhost:8882</arg>
+</arguments>
+<msg timestamp="20180711 14:55:32.520" level="INFO">Creating Session using : alias=search, url=http://localhost:8882, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" endtime="20180711 14:55:32.522" starttime="20180711 14:55:32.519"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>Content-Type=application/json</arg>
+</arguments>
+<assign>
+<var>&amp;{headers}</var>
+</assign>
+<msg timestamp="20180711 14:55:32.523" level="INFO">&amp;{headers} = { Content-Type=application/json }</msg>
+<status status="PASS" endtime="20180711 14:55:32.523" starttime="20180711 14:55:32.522"></status>
+</kw>
+<kw name="Get Request" library="RequestsLibrary">
+<doc>Send a GET request on the session object found using the</doc>
+<arguments>
+<arg>search</arg>
+<arg>/products/${product_id}</arg>
+<arg>headers=${headers}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20180711 14:55:32.551" level="INFO">Get Request using : alias=search, uri=/products/1234, headers={u'Content-Type': u'application/json'} json=None</msg>
+<msg timestamp="20180711 14:55:32.551" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" endtime="20180711 14:55:32.551" starttime="20180711 14:55:32.523"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${response.status_code}</arg>
+<arg>${200}</arg>
+</arguments>
+<status status="PASS" endtime="20180711 14:55:32.552" starttime="20180711 14:55:32.552"></status>
+</kw>
+<status status="PASS" endtime="20180711 14:55:32.553" starttime="20180711 14:55:32.519"></status>
+</kw>
+<kw name="Add selected to cart">
+<arguments>
+<arg>${selected_product_id}</arg>
+</arguments>
+<assign>
+<var>${cart_id}</var>
+</assign>
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>search</arg>
+<arg>http://localhost:8882</arg>
+</arguments>
+<msg timestamp="20180711 14:55:32.555" level="INFO">Creating Session using : alias=search, url=http://localhost:8882, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" endtime="20180711 14:55:32.556" starttime="20180711 14:55:32.554"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>Content-Type=application/json</arg>
+</arguments>
+<assign>
+<var>&amp;{headers}</var>
+</assign>
+<msg timestamp="20180711 14:55:32.556" level="INFO">&amp;{headers} = { Content-Type=application/json }</msg>
+<status status="PASS" endtime="20180711 14:55:32.557" starttime="20180711 14:55:32.556"></status>
+</kw>
+<kw name="Post Request" library="RequestsLibrary">
+<doc>Send a POST request on the session object found using the</doc>
+<arguments>
+<arg>search</arg>
+<arg>/carts</arg>
+<arg>headers=${headers}</arg>
+<arg>data={"product_id":${product_id},"product_quantity":"1"}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20180711 14:55:32.594" level="INFO">Post Request using : alias=search, uri=/carts, data={"product_id":1234,"product_quantity":"1"}, headers={u'Content-Type': u'application/json'}, files=None, allow_redirects=True </msg>
+<msg timestamp="20180711 14:55:32.594" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" endtime="20180711 14:55:32.594" starttime="20180711 14:55:32.557"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${response.status_code}</arg>
+<arg>${200}</arg>
+</arguments>
+<status status="PASS" endtime="20180711 14:55:32.595" starttime="20180711 14:55:32.595"></status>
+</kw>
+<msg timestamp="20180711 14:55:32.596" level="INFO">${cart_id} = 4567</msg>
+<status status="PASS" endtime="20180711 14:55:32.596" starttime="20180711 14:55:32.553"></status>
+</kw>
+<kw name="Create Order">
+<arguments>
+<arg>${cart_id}</arg>
+</arguments>
+<assign>
+<var>${order_id}</var>
+</assign>
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>order</arg>
+<arg>http://localhost:8882</arg>
+</arguments>
+<msg timestamp="20180711 14:55:32.597" level="INFO">Creating Session using : alias=order, url=http://localhost:8882, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" endtime="20180711 14:55:32.598" starttime="20180711 14:55:32.597"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>Content-Type=application/json</arg>
+</arguments>
+<assign>
+<var>&amp;{headers}</var>
+</assign>
+<msg timestamp="20180711 14:55:32.598" level="INFO">&amp;{headers} = { Content-Type=application/json }</msg>
+<status status="PASS" endtime="20180711 14:55:32.599" starttime="20180711 14:55:32.598"></status>
+</kw>
+<kw name="Post Request" library="RequestsLibrary">
+<doc>Send a POST request on the session object found using the</doc>
+<arguments>
+<arg>order</arg>
+<arg>/orders</arg>
+<arg>headers=${headers}</arg>
+<arg>data={"cart_id":${cart_id}}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20180711 14:55:32.615" level="INFO">Post Request using : alias=order, uri=/orders, data={"cart_id":4567}, headers={u'Content-Type': u'application/json'}, files=None, allow_redirects=True </msg>
+<msg timestamp="20180711 14:55:32.616" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" endtime="20180711 14:55:32.616" starttime="20180711 14:55:32.599"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${response.status_code}</arg>
+<arg>${200}</arg>
+</arguments>
+<status status="PASS" endtime="20180711 14:55:32.617" starttime="20180711 14:55:32.616"></status>
+</kw>
+<msg timestamp="20180711 14:55:32.618" level="INFO">${order_id} = 7890</msg>
+<status status="PASS" endtime="20180711 14:55:32.619" starttime="20180711 14:55:32.596"></status>
+</kw>
+<kw name="Show cart detail with calculated pricing">
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>price</arg>
+<arg>http://localhost:8882</arg>
+</arguments>
+<msg timestamp="20180711 14:55:32.620" level="INFO">Creating Session using : alias=price, url=http://localhost:8882, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" endtime="20180711 14:55:32.621" starttime="20180711 14:55:32.620"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>Content-Type=application/json</arg>
+</arguments>
+<assign>
+<var>&amp;{headers}</var>
+</assign>
+<msg timestamp="20180711 14:55:32.622" level="INFO">&amp;{headers} = { Content-Type=application/json }</msg>
+<status status="PASS" endtime="20180711 14:55:32.622" starttime="20180711 14:55:32.621"></status>
+</kw>
+<kw name="Get Request" library="RequestsLibrary">
+<doc>Send a GET request on the session object found using the</doc>
+<arguments>
+<arg>price</arg>
+<arg>/shipping?method=KERRY&amp;weight=2&amp;zipcode=10250&amp;country=TH</arg>
+<arg>headers=${headers}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20180711 14:55:32.638" level="INFO">Get Request using : alias=price, uri=/shipping?method=KERRY&amp;weight=2&amp;zipcode=10250&amp;country=TH, headers={u'Content-Type': u'application/json'} json=None</msg>
+<msg timestamp="20180711 14:55:32.638" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" endtime="20180711 14:55:32.638" starttime="20180711 14:55:32.623"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${response.status_code}</arg>
+<arg>${200}</arg>
+</arguments>
+<status status="PASS" endtime="20180711 14:55:32.639" starttime="20180711 14:55:32.639"></status>
+</kw>
+<status status="PASS" endtime="20180711 14:55:32.639" starttime="20180711 14:55:32.619"></status>
+</kw>
+<kw name="Add shipping address">
+<arguments>
+<arg>${order_id}</arg>
+</arguments>
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>shipping</arg>
+<arg>http://localhost:8882</arg>
+</arguments>
+<msg timestamp="20180711 14:55:32.641" level="INFO">Creating Session using : alias=shipping, url=http://localhost:8882, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" endtime="20180711 14:55:32.641" starttime="20180711 14:55:32.640"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>Content-Type=application/json</arg>
+</arguments>
+<assign>
+<var>&amp;{headers}</var>
+</assign>
+<msg timestamp="20180711 14:55:32.642" level="INFO">&amp;{headers} = { Content-Type=application/json }</msg>
+<status status="PASS" endtime="20180711 14:55:32.642" starttime="20180711 14:55:32.642"></status>
+</kw>
+<kw name="Put Request" library="RequestsLibrary">
+<doc>Send a PUT request on the session object found using the</doc>
+<arguments>
+<arg>shipping</arg>
+<arg>/orders/${order_id}/shipping</arg>
+<arg>headers=${headers}</arg>
+<arg>data={"shipping_customer_name":"trainning name","shipping_address":"RJ","shipping_method":"KERRY","shipping_price":"200"}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20180711 14:55:32.655" level="INFO">Put Request using : alias=shipping, uri=/orders/7890/shipping, data={"shipping_customer_name":"trainning name","shipping_address":"RJ","shipping_method":"KERRY","shipping_price":"200"},                     headers={u'Content-Type': u'application/json'}, allow_redirects=True </msg>
+<msg timestamp="20180711 14:55:32.655" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" endtime="20180711 14:55:32.655" starttime="20180711 14:55:32.642"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${response.status_code}</arg>
+<arg>${200}</arg>
+</arguments>
+<status status="PASS" endtime="20180711 14:55:32.656" starttime="20180711 14:55:32.655"></status>
+</kw>
+<status status="PASS" endtime="20180711 14:55:32.657" starttime="20180711 14:55:32.640"></status>
+</kw>
+<kw name="Payment">
+<arguments>
+<arg>${order_id}</arg>
+</arguments>
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>payment</arg>
+<arg>http://localhost:8882</arg>
+</arguments>
+<msg timestamp="20180711 14:55:32.659" level="INFO">Creating Session using : alias=payment, url=http://localhost:8882, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" endtime="20180711 14:55:32.660" starttime="20180711 14:55:32.659"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>Content-Type=application/json</arg>
+</arguments>
+<assign>
+<var>&amp;{headers}</var>
+</assign>
+<msg timestamp="20180711 14:55:32.662" level="INFO">&amp;{headers} = { Content-Type=application/json }</msg>
+<status status="PASS" endtime="20180711 14:55:32.662" starttime="20180711 14:55:32.661"></status>
+</kw>
+<kw name="Put Request" library="RequestsLibrary">
+<doc>Send a PUT request on the session object found using the</doc>
+<arguments>
+<arg>payment</arg>
+<arg>/orders/${order_id}/payment</arg>
+<arg>headers=${headers}</arg>
+<arg>data={"payment_method":"7-11","payment_date":"11/07/2018","payment_status":"pending"}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20180711 14:55:32.679" level="INFO">Put Request using : alias=payment, uri=/orders/7890/payment, data={"payment_method":"7-11","payment_date":"11/07/2018","payment_status":"pending"},                     headers={u'Content-Type': u'application/json'}, allow_redirects=True </msg>
+<msg timestamp="20180711 14:55:32.679" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" endtime="20180711 14:55:32.679" starttime="20180711 14:55:32.662"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${response.status_code}</arg>
+<arg>${200}</arg>
+</arguments>
+<status status="PASS" endtime="20180711 14:55:32.680" starttime="20180711 14:55:32.679"></status>
+</kw>
+<status status="PASS" endtime="20180711 14:55:32.680" starttime="20180711 14:55:32.658"></status>
+</kw>
+<kw name="Show summary of ordering - success">
+<arguments>
+<arg>${order_id}</arg>
+</arguments>
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>summary</arg>
+<arg>http://localhost:8882</arg>
+</arguments>
+<msg timestamp="20180711 14:55:32.681" level="INFO">Creating Session using : alias=summary, url=http://localhost:8882, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" endtime="20180711 14:55:32.682" starttime="20180711 14:55:32.681"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>Content-Type=application/json</arg>
+</arguments>
+<assign>
+<var>&amp;{headers}</var>
+</assign>
+<msg timestamp="20180711 14:55:32.683" level="INFO">&amp;{headers} = { Content-Type=application/json }</msg>
+<status status="PASS" endtime="20180711 14:55:32.683" starttime="20180711 14:55:32.682"></status>
+</kw>
+<kw name="Get Request" library="RequestsLibrary">
+<doc>Send a GET request on the session object found using the</doc>
+<arguments>
+<arg>summary</arg>
+<arg>/orders/${order_id}</arg>
+<arg>headers=${headers}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20180711 14:55:32.699" level="INFO">Get Request using : alias=summary, uri=/orders/7890, headers={u'Content-Type': u'application/json'} json=None</msg>
+<msg timestamp="20180711 14:55:32.699" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" endtime="20180711 14:55:32.699" starttime="20180711 14:55:32.683"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${response.status_code}</arg>
+<arg>${200}</arg>
+</arguments>
+<status status="PASS" endtime="20180711 14:55:32.701" starttime="20180711 14:55:32.700"></status>
+</kw>
+<status status="PASS" endtime="20180711 14:55:32.701" starttime="20180711 14:55:32.680"></status>
+</kw>
+<status status="PASS" endtime="20180711 14:55:32.702" critical="yes" starttime="20180711 14:55:32.453"></status>
+</test>
+<status status="PASS" endtime="20180711 14:55:32.705" starttime="20180711 14:55:31.982"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Step" pass="1">Step</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

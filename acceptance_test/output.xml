@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20180711 14:46:09.412" generator="Robot 3.0.4 (Python 2.7.10 on darwin)">
+<robot generated="20180711 14:59:57.145" generator="Robot 3.0.4 (Python 2.7.10 on darwin)">
 <suite source="/Users/captainamerica/Documents/workspace/acceptance_test/step.robot" id="s1" name="Step">
 <kw type="setup" name="Create Session for service">
 <kw name="Create Session" library="RequestsLibrary">
@@ -8,10 +8,10 @@
 <arg>${SERVICE}</arg>
 <arg>http://localhost:8882</arg>
 </arguments>
-<msg timestamp="20180711 14:46:09.501" level="INFO">Creating Session using : alias=, url=http://localhost:8882, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" endtime="20180711 14:46:09.501" starttime="20180711 14:46:09.500"></status>
+<msg timestamp="20180711 14:59:57.235" level="INFO">Creating Session using : alias=, url=http://localhost:8882, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" endtime="20180711 14:59:57.235" starttime="20180711 14:59:57.234"></status>
 </kw>
-<status status="PASS" endtime="20180711 14:46:09.501" starttime="20180711 14:46:09.500"></status>
+<status status="PASS" endtime="20180711 14:59:57.236" starttime="20180711 14:59:57.233"></status>
 </kw>
 <test id="s1-t1" name="Order one sneaker successfully">
 <kw name="open app (List all product)">
@@ -23,8 +23,8 @@
 <assign>
 <var>&amp;{headers}</var>
 </assign>
-<msg timestamp="20180711 14:46:09.503" level="INFO">&amp;{headers} = { Content-Type=application/json }</msg>
-<status status="PASS" endtime="20180711 14:46:09.503" starttime="20180711 14:46:09.502"></status>
+<msg timestamp="20180711 14:59:57.238" level="INFO">&amp;{headers} = { Content-Type=application/json }</msg>
+<status status="PASS" endtime="20180711 14:59:57.238" starttime="20180711 14:59:57.237"></status>
 </kw>
 <kw name="Get Request" library="RequestsLibrary">
 <doc>Send a GET request on the session object found using the</doc>
@@ -36,9 +36,9 @@
 <assign>
 <var>${response}</var>
 </assign>
-<msg timestamp="20180711 14:46:09.515" level="INFO">Get Request using : alias=, uri=/products, headers={u'Content-Type': u'application/json'} json=None</msg>
-<msg timestamp="20180711 14:46:09.515" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" endtime="20180711 14:46:09.515" starttime="20180711 14:46:09.503"></status>
+<msg timestamp="20180711 14:59:57.354" level="INFO">Get Request using : alias=, uri=/products, headers={u'Content-Type': u'application/json'} json=None</msg>
+<msg timestamp="20180711 14:59:57.354" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" endtime="20180711 14:59:57.354" starttime="20180711 14:59:57.238"></status>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <doc>Fails if the given objects are unequal.</doc>
@@ -46,7 +46,7 @@
 <arg>${response.status_code}</arg>
 <arg>${200}</arg>
 </arguments>
-<status status="PASS" endtime="20180711 14:46:09.516" starttime="20180711 14:46:09.515"></status>
+<status status="PASS" endtime="20180711 14:59:57.355" starttime="20180711 14:59:57.354"></status>
 </kw>
 <kw name="Get Length" library="BuiltIn">
 <doc>Returns and logs the length of the given item as an integer.</doc>
@@ -56,9 +56,9 @@
 <assign>
 <var>${size}</var>
 </assign>
-<msg timestamp="20180711 14:46:09.517" level="INFO">Length is 2</msg>
-<msg timestamp="20180711 14:46:09.517" level="INFO">${size} = 2</msg>
-<status status="PASS" endtime="20180711 14:46:09.517" starttime="20180711 14:46:09.516"></status>
+<msg timestamp="20180711 14:59:57.356" level="INFO">Length is 2</msg>
+<msg timestamp="20180711 14:59:57.356" level="INFO">${size} = 2</msg>
+<status status="PASS" endtime="20180711 14:59:57.357" starttime="20180711 14:59:57.355"></status>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <doc>Fails if the given objects are unequal.</doc>
@@ -66,9 +66,9 @@
 <arg>${size}</arg>
 <arg>${2}</arg>
 </arguments>
-<status status="PASS" endtime="20180711 14:46:09.517" starttime="20180711 14:46:09.517"></status>
+<status status="PASS" endtime="20180711 14:59:57.358" starttime="20180711 14:59:57.357"></status>
 </kw>
-<status status="PASS" endtime="20180711 14:46:09.517" starttime="20180711 14:46:09.502"></status>
+<status status="PASS" endtime="20180711 14:59:57.358" starttime="20180711 14:59:57.237"></status>
 </kw>
 <kw name="Search product using adidas Keywords">
 <assign>
@@ -82,8 +82,8 @@
 <assign>
 <var>&amp;{headers}</var>
 </assign>
-<msg timestamp="20180711 14:46:09.519" level="INFO">&amp;{headers} = { Content-Type=application/json }</msg>
-<status status="PASS" endtime="20180711 14:46:09.519" starttime="20180711 14:46:09.518"></status>
+<msg timestamp="20180711 14:59:57.360" level="INFO">&amp;{headers} = { Content-Type=application/json }</msg>
+<status status="PASS" endtime="20180711 14:59:57.360" starttime="20180711 14:59:57.359"></status>
 </kw>
 <kw name="Get Request" library="RequestsLibrary">
 <doc>Send a GET request on the session object found using the</doc>
@@ -95,9 +95,9 @@
 <assign>
 <var>${response}</var>
 </assign>
-<msg timestamp="20180711 14:46:09.527" level="INFO">Get Request using : alias=, uri=/products?q=Adidas, headers={u'Content-Type': u'application/json'} json=None</msg>
-<msg timestamp="20180711 14:46:09.527" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" endtime="20180711 14:46:09.527" starttime="20180711 14:46:09.519"></status>
+<msg timestamp="20180711 14:59:57.369" level="INFO">Get Request using : alias=, uri=/products?q=Adidas, headers={u'Content-Type': u'application/json'} json=None</msg>
+<msg timestamp="20180711 14:59:57.370" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" endtime="20180711 14:59:57.370" starttime="20180711 14:59:57.360"></status>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <doc>Fails if the given objects are unequal.</doc>
@@ -105,17 +105,10 @@
 <arg>${response.status_code}</arg>
 <arg>${200}</arg>
 </arguments>
-<status status="PASS" endtime="20180711 14:46:09.528" starttime="20180711 14:46:09.527"></status>
+<status status="PASS" endtime="20180711 14:59:57.371" starttime="20180711 14:59:57.370"></status>
 </kw>
-<msg timestamp="20180711 14:46:09.528" level="INFO">${selected_product_id} = 1234</msg>
-<status status="PASS" endtime="20180711 14:46:09.528" starttime="20180711 14:46:09.518"></status>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<doc>Logs the given message to the console.</doc>
-<arguments>
-<arg>${selected_product_id}</arg>
-</arguments>
-<status status="PASS" endtime="20180711 14:46:09.529" starttime="20180711 14:46:09.529"></status>
+<msg timestamp="20180711 14:59:57.371" level="INFO">${selected_product_id} = 1234</msg>
+<status status="PASS" endtime="20180711 14:59:57.372" starttime="20180711 14:59:57.358"></status>
 </kw>
 <kw name="show one product detail">
 <arguments>
@@ -132,8 +125,8 @@
 <assign>
 <var>&amp;{headers}</var>
 </assign>
-<msg timestamp="20180711 14:46:09.530" level="INFO">&amp;{headers} = { Content-Type=application/json }</msg>
-<status status="PASS" endtime="20180711 14:46:09.530" starttime="20180711 14:46:09.530"></status>
+<msg timestamp="20180711 14:59:57.373" level="INFO">&amp;{headers} = { Content-Type=application/json }</msg>
+<status status="PASS" endtime="20180711 14:59:57.373" starttime="20180711 14:59:57.373"></status>
 </kw>
 <kw name="Get Request" library="RequestsLibrary">
 <doc>Send a GET request on the session object found using the</doc>
@@ -145,9 +138,9 @@
 <assign>
 <var>${response}</var>
 </assign>
-<msg timestamp="20180711 14:46:09.535" level="INFO">Get Request using : alias=, uri=/products/1234, headers={u'Content-Type': u'application/json'} json=None</msg>
-<msg timestamp="20180711 14:46:09.536" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" endtime="20180711 14:46:09.536" starttime="20180711 14:46:09.530"></status>
+<msg timestamp="20180711 14:59:57.382" level="INFO">Get Request using : alias=, uri=/products/1234, headers={u'Content-Type': u'application/json'} json=None</msg>
+<msg timestamp="20180711 14:59:57.382" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" endtime="20180711 14:59:57.382" starttime="20180711 14:59:57.374"></status>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <doc>Fails if the given objects are unequal.</doc>
@@ -155,7 +148,7 @@
 <arg>${response.status_code}</arg>
 <arg>${200}</arg>
 </arguments>
-<status status="PASS" endtime="20180711 14:46:09.536" starttime="20180711 14:46:09.536"></status>
+<status status="PASS" endtime="20180711 14:59:57.383" starttime="20180711 14:59:57.383"></status>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <doc>Fails if the given objects are unequal.</doc>
@@ -163,10 +156,10 @@
 <arg>${response.json()['product_name']}</arg>
 <arg>Adidas1</arg>
 </arguments>
-<status status="PASS" endtime="20180711 14:46:09.537" starttime="20180711 14:46:09.536"></status>
+<status status="PASS" endtime="20180711 14:59:57.384" starttime="20180711 14:59:57.383"></status>
 </kw>
-<msg timestamp="20180711 14:46:09.537" level="INFO">${product_id} = 1234</msg>
-<status status="PASS" endtime="20180711 14:46:09.537" starttime="20180711 14:46:09.529"></status>
+<msg timestamp="20180711 14:59:57.384" level="INFO">${product_id} = 1234</msg>
+<status status="PASS" endtime="20180711 14:59:57.385" starttime="20180711 14:59:57.372"></status>
 </kw>
 <kw name="add selected product to cart">
 <arguments>
@@ -183,8 +176,8 @@
 <assign>
 <var>&amp;{headers}</var>
 </assign>
-<msg timestamp="20180711 14:46:09.538" level="INFO">&amp;{headers} = { Content-Type=application/json }</msg>
-<status status="PASS" endtime="20180711 14:46:09.538" starttime="20180711 14:46:09.538"></status>
+<msg timestamp="20180711 14:59:57.386" level="INFO">&amp;{headers} = { Content-Type=application/json }</msg>
+<status status="PASS" endtime="20180711 14:59:57.386" starttime="20180711 14:59:57.385"></status>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
@@ -195,8 +188,8 @@
 <assign>
 <var>&amp;{datas}</var>
 </assign>
-<msg timestamp="20180711 14:46:09.539" level="INFO">&amp;{datas} = { product_id=1234 | product_quantity=1 }</msg>
-<status status="PASS" endtime="20180711 14:46:09.539" starttime="20180711 14:46:09.538"></status>
+<msg timestamp="20180711 14:59:57.388" level="INFO">&amp;{datas} = { product_id=1234 | product_quantity=1 }</msg>
+<status status="PASS" endtime="20180711 14:59:57.388" starttime="20180711 14:59:57.387"></status>
 </kw>
 <kw name="Post Request" library="RequestsLibrary">
 <doc>Send a POST request on the session object found using the</doc>
@@ -209,9 +202,9 @@
 <assign>
 <var>${response}</var>
 </assign>
-<msg timestamp="20180711 14:46:09.550" level="INFO">Post Request using : alias=, uri=/carts, data={"product_id": 1234, "product_quantity": "1"}, headers={u'Content-Type': u'application/json'}, files=None, allow_redirects=True </msg>
-<msg timestamp="20180711 14:46:09.550" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" endtime="20180711 14:46:09.550" starttime="20180711 14:46:09.539"></status>
+<msg timestamp="20180711 14:59:57.405" level="INFO">Post Request using : alias=, uri=/carts, data={"product_id": 1234, "product_quantity": "1"}, headers={u'Content-Type': u'application/json'}, files=None, allow_redirects=True </msg>
+<msg timestamp="20180711 14:59:57.405" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" endtime="20180711 14:59:57.405" starttime="20180711 14:59:57.388"></status>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <doc>Fails if the given objects are unequal.</doc>
@@ -219,17 +212,10 @@
 <arg>${response.status_code}</arg>
 <arg>${200}</arg>
 </arguments>
-<status status="PASS" endtime="20180711 14:46:09.551" starttime="20180711 14:46:09.550"></status>
+<status status="PASS" endtime="20180711 14:59:57.406" starttime="20180711 14:59:57.405"></status>
 </kw>
-<msg timestamp="20180711 14:46:09.552" level="INFO">${cart_id} = 4567</msg>
-<status status="PASS" endtime="20180711 14:46:09.552" starttime="20180711 14:46:09.537"></status>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<doc>Logs the given message to the console.</doc>
-<arguments>
-<arg>${cart_id}</arg>
-</arguments>
-<status status="PASS" endtime="20180711 14:46:09.552" starttime="20180711 14:46:09.552"></status>
+<msg timestamp="20180711 14:59:57.407" level="INFO">${cart_id} = 4567</msg>
+<status status="PASS" endtime="20180711 14:59:57.407" starttime="20180711 14:59:57.385"></status>
 </kw>
 <kw name="show product in cart">
 <arguments>
@@ -243,8 +229,8 @@
 <assign>
 <var>&amp;{headers}</var>
 </assign>
-<msg timestamp="20180711 14:46:09.554" level="INFO">&amp;{headers} = { Content-Type=application/json }</msg>
-<status status="PASS" endtime="20180711 14:46:09.554" starttime="20180711 14:46:09.553"></status>
+<msg timestamp="20180711 14:59:57.409" level="INFO">&amp;{headers} = { Content-Type=application/json }</msg>
+<status status="PASS" endtime="20180711 14:59:57.409" starttime="20180711 14:59:57.408"></status>
 </kw>
 <kw name="Get Request" library="RequestsLibrary">
 <doc>Send a GET request on the session object found using the</doc>
@@ -256,9 +242,9 @@
 <assign>
 <var>${response}</var>
 </assign>
-<msg timestamp="20180711 14:46:09.562" level="INFO">Get Request using : alias=, uri=/carts/4567, headers={u'Content-Type': u'application/json'} json=None</msg>
-<msg timestamp="20180711 14:46:09.562" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" endtime="20180711 14:46:09.562" starttime="20180711 14:46:09.554"></status>
+<msg timestamp="20180711 14:59:57.417" level="INFO">Get Request using : alias=, uri=/carts/4567, headers={u'Content-Type': u'application/json'} json=None</msg>
+<msg timestamp="20180711 14:59:57.417" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" endtime="20180711 14:59:57.417" starttime="20180711 14:59:57.409"></status>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <doc>Fails if the given objects are unequal.</doc>
@@ -266,9 +252,9 @@
 <arg>${response.status_code}</arg>
 <arg>${200}</arg>
 </arguments>
-<status status="PASS" endtime="20180711 14:46:09.564" starttime="20180711 14:46:09.563"></status>
+<status status="PASS" endtime="20180711 14:59:57.418" starttime="20180711 14:59:57.418"></status>
 </kw>
-<status status="PASS" endtime="20180711 14:46:09.564" starttime="20180711 14:46:09.553"></status>
+<status status="PASS" endtime="20180711 14:59:57.419" starttime="20180711 14:59:57.407"></status>
 </kw>
 <kw name="checkout the cart (Create Order ID)">
 <arguments>
@@ -285,8 +271,8 @@
 <assign>
 <var>&amp;{headers}</var>
 </assign>
-<msg timestamp="20180711 14:46:09.566" level="INFO">&amp;{headers} = { Content-Type=application/json }</msg>
-<status status="PASS" endtime="20180711 14:46:09.566" starttime="20180711 14:46:09.565"></status>
+<msg timestamp="20180711 14:59:57.421" level="INFO">&amp;{headers} = { Content-Type=application/json }</msg>
+<status status="PASS" endtime="20180711 14:59:57.421" starttime="20180711 14:59:57.420"></status>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
@@ -296,8 +282,8 @@
 <assign>
 <var>&amp;{datas}</var>
 </assign>
-<msg timestamp="20180711 14:46:09.567" level="INFO">&amp;{datas} = { cart_id=4567 }</msg>
-<status status="PASS" endtime="20180711 14:46:09.567" starttime="20180711 14:46:09.566"></status>
+<msg timestamp="20180711 14:59:57.422" level="INFO">&amp;{datas} = { cart_id=4567 }</msg>
+<status status="PASS" endtime="20180711 14:59:57.423" starttime="20180711 14:59:57.422"></status>
 </kw>
 <kw name="Post Request" library="RequestsLibrary">
 <doc>Send a POST request on the session object found using the</doc>
@@ -310,9 +296,9 @@
 <assign>
 <var>${response}</var>
 </assign>
-<msg timestamp="20180711 14:46:09.579" level="INFO">Post Request using : alias=, uri=/orders, data={"cart_id": 4567}, headers={u'Content-Type': u'application/json'}, files=None, allow_redirects=True </msg>
-<msg timestamp="20180711 14:46:09.579" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" endtime="20180711 14:46:09.579" starttime="20180711 14:46:09.568"></status>
+<msg timestamp="20180711 14:59:57.434" level="INFO">Post Request using : alias=, uri=/orders, data={"cart_id": 4567}, headers={u'Content-Type': u'application/json'}, files=None, allow_redirects=True </msg>
+<msg timestamp="20180711 14:59:57.434" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" endtime="20180711 14:59:57.434" starttime="20180711 14:59:57.423"></status>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <doc>Fails if the given objects are unequal.</doc>
@@ -320,17 +306,17 @@
 <arg>${response.status_code}</arg>
 <arg>${200}</arg>
 </arguments>
-<status status="PASS" endtime="20180711 14:46:09.580" starttime="20180711 14:46:09.579"></status>
+<status status="PASS" endtime="20180711 14:59:57.435" starttime="20180711 14:59:57.435"></status>
 </kw>
-<msg timestamp="20180711 14:46:09.580" level="INFO">${order_id} = 7890</msg>
-<status status="PASS" endtime="20180711 14:46:09.580" starttime="20180711 14:46:09.564"></status>
+<msg timestamp="20180711 14:59:57.436" level="INFO">${order_id} = 7890</msg>
+<status status="PASS" endtime="20180711 14:59:57.436" starttime="20180711 14:59:57.419"></status>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <doc>Logs the given message to the console.</doc>
 <arguments>
 <arg>${order_id}</arg>
 </arguments>
-<status status="PASS" endtime="20180711 14:46:09.581" starttime="20180711 14:46:09.581"></status>
+<status status="PASS" endtime="20180711 14:59:57.436" starttime="20180711 14:59:57.436"></status>
 </kw>
 <kw name="show shipping method with shipping cost">
 <kw name="Create Dictionary" library="BuiltIn">
@@ -341,8 +327,8 @@
 <assign>
 <var>&amp;{headers}</var>
 </assign>
-<msg timestamp="20180711 14:46:09.582" level="INFO">&amp;{headers} = { Content-Type=application/json }</msg>
-<status status="PASS" endtime="20180711 14:46:09.582" starttime="20180711 14:46:09.581"></status>
+<msg timestamp="20180711 14:59:57.438" level="INFO">&amp;{headers} = { Content-Type=application/json }</msg>
+<status status="PASS" endtime="20180711 14:59:57.438" starttime="20180711 14:59:57.437"></status>
 </kw>
 <kw name="Get Request" library="RequestsLibrary">
 <doc>Send a GET request on the session object found using the</doc>
@@ -354,9 +340,9 @@
 <assign>
 <var>${response}</var>
 </assign>
-<msg timestamp="20180711 14:46:09.587" level="INFO">Get Request using : alias=, uri=/shipping?method=KERRY&amp;weight=2&amp;zipcode=10250&amp;country=TH, headers={u'Content-Type': u'application/json'} json=None</msg>
-<msg timestamp="20180711 14:46:09.587" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" endtime="20180711 14:46:09.588" starttime="20180711 14:46:09.582"></status>
+<msg timestamp="20180711 14:59:57.445" level="INFO">Get Request using : alias=, uri=/shipping?method=KERRY&amp;weight=2&amp;zipcode=10250&amp;country=TH, headers={u'Content-Type': u'application/json'} json=None</msg>
+<msg timestamp="20180711 14:59:57.446" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" endtime="20180711 14:59:57.446" starttime="20180711 14:59:57.438"></status>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <doc>Fails if the given objects are unequal.</doc>
@@ -364,7 +350,7 @@
 <arg>${response.status_code}</arg>
 <arg>${200}</arg>
 </arguments>
-<status status="PASS" endtime="20180711 14:46:09.589" starttime="20180711 14:46:09.588"></status>
+<status status="PASS" endtime="20180711 14:59:57.447" starttime="20180711 14:59:57.446"></status>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <doc>Fails if the given objects are unequal.</doc>
@@ -372,9 +358,9 @@
 <arg>${response.json()['shipping_price']}</arg>
 <arg>200</arg>
 </arguments>
-<status status="PASS" endtime="20180711 14:46:09.589" starttime="20180711 14:46:09.589"></status>
+<status status="PASS" endtime="20180711 14:59:57.448" starttime="20180711 14:59:57.447"></status>
 </kw>
-<status status="PASS" endtime="20180711 14:46:09.589" starttime="20180711 14:46:09.581"></status>
+<status status="PASS" endtime="20180711 14:59:57.448" starttime="20180711 14:59:57.437"></status>
 </kw>
 <kw name="add shipping detail">
 <arguments>
@@ -388,8 +374,8 @@
 <assign>
 <var>&amp;{headers}</var>
 </assign>
-<msg timestamp="20180711 14:46:09.591" level="INFO">&amp;{headers} = { Content-Type=application/json }</msg>
-<status status="PASS" endtime="20180711 14:46:09.591" starttime="20180711 14:46:09.590"></status>
+<msg timestamp="20180711 14:59:57.449" level="INFO">&amp;{headers} = { Content-Type=application/json }</msg>
+<status status="PASS" endtime="20180711 14:59:57.449" starttime="20180711 14:59:57.449"></status>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
@@ -402,8 +388,8 @@
 <assign>
 <var>&amp;{datas}</var>
 </assign>
-<msg timestamp="20180711 14:46:09.591" level="INFO">&amp;{datas} = { shipping_customer_name=trainning name | shipping_address=RJ | shipping_method=KERRY | shipping_price=200 }</msg>
-<status status="PASS" endtime="20180711 14:46:09.591" starttime="20180711 14:46:09.591"></status>
+<msg timestamp="20180711 14:59:57.450" level="INFO">&amp;{datas} = { shipping_customer_name=trainning name | shipping_address=RJ | shipping_method=KERRY | shipping_price=200 }</msg>
+<status status="PASS" endtime="20180711 14:59:57.450" starttime="20180711 14:59:57.449"></status>
 </kw>
 <kw name="Put Request" library="RequestsLibrary">
 <doc>Send a PUT request on the session object found using the</doc>
@@ -416,9 +402,9 @@
 <assign>
 <var>${response}</var>
 </assign>
-<msg timestamp="20180711 14:46:09.599" level="INFO">Put Request using : alias=, uri=/orders/7890/shipping, data={"shipping_customer_name": "trainning name", "shipping_address": "RJ", "shipping_method": "KERRY", "shipping_price": "200"},                     headers={u'Content-Type': u'application/json'}, allow_redirects=True </msg>
-<msg timestamp="20180711 14:46:09.599" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" endtime="20180711 14:46:09.599" starttime="20180711 14:46:09.592"></status>
+<msg timestamp="20180711 14:59:57.459" level="INFO">Put Request using : alias=, uri=/orders/7890/shipping, data={"shipping_customer_name": "trainning name", "shipping_address": "RJ", "shipping_method": "KERRY", "shipping_price": "200"},                     headers={u'Content-Type': u'application/json'}, allow_redirects=True </msg>
+<msg timestamp="20180711 14:59:57.460" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" endtime="20180711 14:59:57.460" starttime="20180711 14:59:57.450"></status>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <doc>Fails if the given objects are unequal.</doc>
@@ -426,9 +412,9 @@
 <arg>${response.status_code}</arg>
 <arg>${200}</arg>
 </arguments>
-<status status="PASS" endtime="20180711 14:46:09.601" starttime="20180711 14:46:09.600"></status>
+<status status="PASS" endtime="20180711 14:59:57.461" starttime="20180711 14:59:57.460"></status>
 </kw>
-<status status="PASS" endtime="20180711 14:46:09.602" starttime="20180711 14:46:09.589"></status>
+<status status="PASS" endtime="20180711 14:59:57.461" starttime="20180711 14:59:57.448"></status>
 </kw>
 <kw name="add payment detail">
 <arguments>
@@ -442,8 +428,8 @@
 <assign>
 <var>&amp;{headers}</var>
 </assign>
-<msg timestamp="20180711 14:46:09.604" level="INFO">&amp;{headers} = { Content-Type=application/json }</msg>
-<status status="PASS" endtime="20180711 14:46:09.604" starttime="20180711 14:46:09.603"></status>
+<msg timestamp="20180711 14:59:57.463" level="INFO">&amp;{headers} = { Content-Type=application/json }</msg>
+<status status="PASS" endtime="20180711 14:59:57.463" starttime="20180711 14:59:57.462"></status>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
@@ -455,8 +441,8 @@
 <assign>
 <var>&amp;{datas}</var>
 </assign>
-<msg timestamp="20180711 14:46:09.606" level="INFO">&amp;{datas} = { payment_method=7-11 | payment_date=11/07/2018 | payment_status=pending }</msg>
-<status status="PASS" endtime="20180711 14:46:09.606" starttime="20180711 14:46:09.604"></status>
+<msg timestamp="20180711 14:59:57.465" level="INFO">&amp;{datas} = { payment_method=7-11 | payment_date=11/07/2018 | payment_status=pending }</msg>
+<status status="PASS" endtime="20180711 14:59:57.465" starttime="20180711 14:59:57.463"></status>
 </kw>
 <kw name="Put Request" library="RequestsLibrary">
 <doc>Send a PUT request on the session object found using the</doc>
@@ -469,9 +455,9 @@
 <assign>
 <var>${response}</var>
 </assign>
-<msg timestamp="20180711 14:46:09.615" level="INFO">Put Request using : alias=, uri=/orders/7890/payment, data={"payment_method": "7-11", "payment_date": "11/07/2018", "payment_status": "pending"},                     headers={u'Content-Type': u'application/json'}, allow_redirects=True </msg>
-<msg timestamp="20180711 14:46:09.615" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" endtime="20180711 14:46:09.616" starttime="20180711 14:46:09.606"></status>
+<msg timestamp="20180711 14:59:57.474" level="INFO">Put Request using : alias=, uri=/orders/7890/payment, data={"payment_method": "7-11", "payment_date": "11/07/2018", "payment_status": "pending"},                     headers={u'Content-Type': u'application/json'}, allow_redirects=True </msg>
+<msg timestamp="20180711 14:59:57.474" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" endtime="20180711 14:59:57.475" starttime="20180711 14:59:57.465"></status>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <doc>Fails if the given objects are unequal.</doc>
@@ -479,9 +465,9 @@
 <arg>${response.status_code}</arg>
 <arg>${200}</arg>
 </arguments>
-<status status="PASS" endtime="20180711 14:46:09.617" starttime="20180711 14:46:09.616"></status>
+<status status="PASS" endtime="20180711 14:59:57.476" starttime="20180711 14:59:57.475"></status>
 </kw>
-<status status="PASS" endtime="20180711 14:46:09.617" starttime="20180711 14:46:09.602"></status>
+<status status="PASS" endtime="20180711 14:59:57.476" starttime="20180711 14:59:57.461"></status>
 </kw>
 <kw name="show summary">
 <arguments>
@@ -495,8 +481,8 @@
 <assign>
 <var>&amp;{headers}</var>
 </assign>
-<msg timestamp="20180711 14:46:09.619" level="INFO">&amp;{headers} = { Content-Type=application/json }</msg>
-<status status="PASS" endtime="20180711 14:46:09.619" starttime="20180711 14:46:09.618"></status>
+<msg timestamp="20180711 14:59:57.478" level="INFO">&amp;{headers} = { Content-Type=application/json }</msg>
+<status status="PASS" endtime="20180711 14:59:57.478" starttime="20180711 14:59:57.477"></status>
 </kw>
 <kw name="Get Request" library="RequestsLibrary">
 <doc>Send a GET request on the session object found using the</doc>
@@ -508,9 +494,9 @@
 <assign>
 <var>${response}</var>
 </assign>
-<msg timestamp="20180711 14:46:09.627" level="INFO">Get Request using : alias=, uri=/orders/7890, headers={u'Content-Type': u'application/json'} json=None</msg>
-<msg timestamp="20180711 14:46:09.627" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" endtime="20180711 14:46:09.627" starttime="20180711 14:46:09.619"></status>
+<msg timestamp="20180711 14:59:57.485" level="INFO">Get Request using : alias=, uri=/orders/7890, headers={u'Content-Type': u'application/json'} json=None</msg>
+<msg timestamp="20180711 14:59:57.486" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" endtime="20180711 14:59:57.486" starttime="20180711 14:59:57.478"></status>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <doc>Fails if the given objects are unequal.</doc>
@@ -518,13 +504,13 @@
 <arg>${response.status_code}</arg>
 <arg>${200}</arg>
 </arguments>
-<status status="PASS" endtime="20180711 14:46:09.629" starttime="20180711 14:46:09.627"></status>
+<status status="PASS" endtime="20180711 14:59:57.487" starttime="20180711 14:59:57.486"></status>
 </kw>
-<status status="PASS" endtime="20180711 14:46:09.629" starttime="20180711 14:46:09.617"></status>
+<status status="PASS" endtime="20180711 14:59:57.488" starttime="20180711 14:59:57.476"></status>
 </kw>
-<status status="PASS" endtime="20180711 14:46:09.629" critical="yes" starttime="20180711 14:46:09.501"></status>
+<status status="PASS" endtime="20180711 14:59:57.488" critical="yes" starttime="20180711 14:59:57.236"></status>
 </test>
-<status status="PASS" endtime="20180711 14:46:09.630" starttime="20180711 14:46:09.414"></status>
+<status status="PASS" endtime="20180711 14:59:57.489" starttime="20180711 14:59:57.147"></status>
 </suite>
 <statistics>
 <total>

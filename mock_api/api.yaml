@@ -131,5 +131,43 @@
  content-type: application/json
  file: addshippingdetail_response_success.json
 
+
 ######################################################
 
+ request:
+ method: GET
+ url: /shipping
+ query: 
+ method: KERRY
+ weight: 2
+ zipcode: 10250
+ country: TH
+
+
+
+ response:
+ status: 200
+ headers:
+ content-type: application/json
+ file: getshippingpricelist_response_success.json
+
+######################################################
+request:
+ method: PUT
+ url: /orders/7890/payment
+ query: 
+ q: 
+
+ request:
+ headers:
+ content-type: application/json
+ file: addpaymentdetail_request.json
+
+ response:
+ status: 200
+ headers:
+ content-type: application/json
+ file: addpaymentdetail_response_success.json
+
+
+######################################################

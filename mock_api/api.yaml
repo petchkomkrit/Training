@@ -1,3 +1,21 @@
+# # ######################################################
+
+-  request:
+      method: GET
+      url: /products
+      query:
+            q: Adidas
+      headers:
+         content-type: application/json
+      post: >
+
+   response:
+      status: 200
+      headers:
+         content-type: application/json
+      file: listsearch_response_success.json
+      
+# # ######################################################
 
 -  request:
       method: GET
@@ -27,23 +45,6 @@
       headers:
          content-type: application/json
       file: getproductdetail_response_success.json
-
-# # ######################################################
-
--  request:
-      method: GET
-      url: /products
-      query:
-            q: Adidas
-      headers:
-         content-type: application/json
-      post: >
-
-   response:
-      status: 200
-      headers:
-         content-type: application/json
-      file: listsearch_response_success.json
 
 # # ######################################################
 

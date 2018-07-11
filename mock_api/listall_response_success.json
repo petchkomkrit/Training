@@ -2,15 +2,15 @@
     "productlist":[
         {
             "product_id":1234,
-            "product_name":"Adidas1",
+            "product_name":"Adidas",
             "product_price":"1000",
             "product_url":"http://Adidas1.jpg"
         },
         {
             "product_id":2,
-            "product_name":"Adidas2",
+            "product_name":"Nike",
             "product_price":"2000",
-            "product_url":"http://Adidas2.jpg"
+            "product_url":"http://Nike2.jpg"
         }
     ]
 }

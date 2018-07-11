@@ -47,18 +47,18 @@
 
 # ######################################################
 
-# -  request:
-#       method: GET
-#       url: /carts/4567
-#       headers:
-#          content-type: application/json
-#       post: >
+-  request:
+      method: GET
+      url: /carts/4567
+      headers:
+         content-type: application/json
+      post: >
 
-#    response:
-#       status: 200
-#       headers:
-#          content-type: application/json
-#       file: getcartlist_response_success.json
+   response:
+      status: 200
+      headers:
+         content-type: application/json
+      file: getcartlist_response_success.json
 
 # ######################################################
 
@@ -93,53 +93,52 @@
 
 # # ######################################################
 
-# -  request:
-#       method: PUT
-#       url: /orders/7890/shipping
-#       headers:
-#          content-type: application/json
-#       file: addshippingdetail_request.json
-#       post: >
+-  request:
+      method: PUT
+      url: /orders/7890/shipping
+      headers:
+         content-type: application/json
+      file: addshippingdetail_request.json
+      post: >
 
-#    response:
-#       status: 200
-#       headers:
-#          content-type: application/json
+   response:
+      status: 200
+      headers:
+         content-type: application/json
 # ######################################################
 
-# -  request:
-#       method: GET
-#       url: /shipping
-#       query:
-#              method: KERRY
-#              weight: 2
-#              zipcode: 10250
-#              country: TH
-#       headers:
-#          content-type: application/json
-#       post: >
+-  request:
+      method: GET
+      url: /shipping
+      query:
+             method: KERRY
+             weight: 2
+             zipcode: 10250
+             country: TH
+      headers:
+         content-type: application/json
+      post: >
 
-#    response:
-#       status: 200
-#       headers:
-#          content-type: application/json
-#       file: getshippingpricelist_response_success.json
+   response:
+      status: 200
+      headers:
+         content-type: application/json
+      file: getshippingpricelist_response_success.json
 
 
 # # ######################################################
 
-# -  request:
-#       method: PUT
-#       url: /orders/7890/payment
-#       headers:
-#          content-type: application/json
-#       file: addpaymentdetail_request.json
-#       post: >
+-  request:
+      method: PUT
+      url: /orders/7890/payment
+      headers:
+         content-type: application/json
+      file: addpaymentdetail_request.json
+      post: >
 
-#    response:
-#       status: 200
-#       headers:
-#          content-type: application/json
-#       file: addpaymentdetail_response_success.json
+   response:
+      status: 200
+      headers:
+         content-type: application/json
 
 ######################################################
